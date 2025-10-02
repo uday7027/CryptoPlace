@@ -1,0 +1,129 @@
+/* ...existing code... */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10%;
+    color: #ddd;
+    border-bottom: 1px solid #f9f6f6;
+    background: rgba(9,9,121,0.18);
+    transition: box-shadow 0.3s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.navbar:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+
+.navbar .logo {
+    font-weight: bold;
+    font-size: 24px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.navbar .logo:hover {
+    color: #00d4ff;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 24px;
+}
+
+.navbar ul li {
+    position: relative;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.navbar ul li::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #00d4ff;
+    transition: width 0.3s;
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+}
+
+.navbar ul li:hover {
+    color: #00d4ff;
+}
+
+.navbar ul li:hover::after {
+    width: 100%;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.navbar select {
+    padding: 6px 10px;
+    border-radius: 4px;
+    background: transparent;
+    border: 2px solid #00d4ff;
+    color: white;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.navbar select:focus {
+    border-color: #fff;
+}
+
+.navbar option {
+    background-color: #ddd;
+    color: black;
+}
+
+.navbar button {
+    padding: 10px 22px;
+    border-radius: 8px;
+    border: none;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    background: #f0f0f1;
+    color: #000000;
+    box-shadow: none;
+    transition: background 0.2s;
+}
+
+.navbar button:hover {
+    background: #0056b3;
+}
+
+.navbar button img {
+    width: 15px;
+    height: 15px;
+    margin-left: 8px;
+    transition: none;
+}
+@media(max-width: 900px){
+    .navbar{
+        padding: 20px 8%
+    }
+    .navbar button{
+        gap: 8px;
+    }
+}
+@media(max-width: 768px){
+    .navbar{
+        padding: 20px 5%
+    }
+    .navbar ul{
+        display: none;
+    }
+    .navbar button img{
+        width: 12px;
+    }
+}
